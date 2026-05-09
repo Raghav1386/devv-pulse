@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { PlusCircle, Github } from 'lucide-react';
+import { PlusCircle, GitBranch } from 'lucide-react';
 
 const RepoForm = ({ onRepoAdded }) => {
   const [owner, setOwner] = useState('');
@@ -37,7 +37,7 @@ const RepoForm = ({ onRepoAdded }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 mb-8 shadow-2xl">
       <div className="flex items-center gap-2 mb-4 text-blue-400">
-        <Github size={20} />
+        <GitBranch size={20} />
         <h2 className="text-lg font-semibold text-white">Track New Repository</h2>
       </div>
       
