@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import PlusCircle from 'lucide-react/dist/esm/icons/plus-circle';
-import Github from 'lucide-react/dist/esm/icons/github';
+import { PlusCircle, Github } from 'lucide-react';
 
 const RepoForm = ({ onRepoAdded }) => {
   const [owner, setOwner] = useState('');
