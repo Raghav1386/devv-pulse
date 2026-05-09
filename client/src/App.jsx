@@ -4,14 +4,15 @@ import axios from 'axios';
 import Dashboard from './components/Dashboard';
 import RepoForm from './components/RepoForm';
 
-const socket = io('http://localhost:5000');
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const socket = io(API_URL);
 
 function App() {
   const [repos, setRepos] = useState([]);
 
   // Fetch existing repos from DB on load
   useEffect(() => {
-    axios.get('http://localhost:5000/api/repos')
+    axios.get(`${API_URL}/api/repos`)
       .then(res => setRepos(res.data))
       .catch(err => console.error("Initial fetch error:", err));
   }, []);

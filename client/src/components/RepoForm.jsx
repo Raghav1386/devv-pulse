@@ -15,7 +15,8 @@ const RepoForm = ({ onRepoAdded }) => {
     setLoading(true);
     try {
       // Sending data to your Express backend
-      const res = await axios.post('http://localhost:5000/api/repos', { 
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await axios.post(`${API_URL}/api/repos`, { 
         owner: owner.trim(), 
         name: repo.trim() 
       });
